@@ -3,8 +3,68 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MS Service – Städning i Malmö</title>
+
+<!-- ═══ SEO META ═══ -->
+<title>MS Service – Professionell Städning i Malmö | RUT-avdrag</title>
+<meta name="description" content="MS Service erbjuder hemstädning, storstädning, flyttstädning och kontorsstädning i Malmö. Certifierade städare, nöjdhetsgaranti och 50% RUT-avdrag. Boka gratis offert idag!"/>
+<meta name="keywords" content="städning malmö, hemstädning malmö, flyttstädning malmö, storstädning, städfirma malmö, rut-avdrag städning, kontorsstädning malmö, fönsterputsning"/>
+<meta name="author" content="MS Service AB"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.msservice.se/"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.msservice.se/"/>
+<meta property="og:title" content="MS Service – Professionell Städning i Malmö"/>
+<meta property="og:description" content="Hemstädning, storstädning och flyttstädning i Malmö. 50% RUT-avdrag. Nöjdhetsgaranti. Boka gratis offert!"/>
+<meta property="og:image" content="https://www.msservice.se/og-image.jpg"/>
+<meta property="og:locale" content="sv_SE"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="MS Service – Städning i Malmö"/>
+<meta name="twitter:description" content="Professionell städtjänst med RUT-avdrag. Boka gratis offert idag."/>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MS Service AB",
+  "description": "Professionell städtjänst i Malmö. Hemstädning, storstädning, flyttstädning och kontorsstädning med RUT-avdrag.",
+  "url": "https://www.msservice.se",
+  "telephone": "+46401234567",
+  "email": "info@msservice.se",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Storgatan 14",
+    "addressLocality": "Malmö",
+    "postalCode": "211 22",
+    "addressCountry": "SE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 55.6050,
+    "longitude": 13.0006
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "340"
+  },
+  "priceRange": "349-3490 kr",
+  "image": "https://www.msservice.se/og-image.jpg",
+  "foundingDate": "2010",
+  "areaServed": {"@type": "City", "name": "Malmö"}
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Caveat:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -26,11 +86,11 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--sand);color:var(--text);-webkit-font-smoothing:antialiased;min-height:100vh}
 
-/* ─── PAGE SYSTEM ─── */
+/* ── PAGE SYSTEM ── */
 .page{display:none}
 .page.active{display:block}
 
-/* ─── NAV ─── */
+/* ── NAV ── */
 nav{
   position:sticky;top:0;z-index:500;
   background:rgba(247,240,227,.96);backdrop-filter:blur(12px);
@@ -41,17 +101,17 @@ nav{
 .logo{
   font-family:var(--serif);font-size:1.5rem;font-weight:600;
   color:var(--brown);cursor:pointer;display:flex;align-items:center;gap:.45rem;
-  user-select:none;
+  user-select:none;border:none;background:none;
 }
 .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--honey);margin-bottom:2px;flex-shrink:0}
 .nav-links{display:flex;gap:0;list-style:none}
-.nav-links li a{
-  text-decoration:none;color:var(--muted);
-  font-size:.875rem;font-weight:400;letter-spacing:.02em;
+.nav-links li button{
+  color:var(--muted);font-size:.875rem;font-weight:400;letter-spacing:.02em;
   padding:.5rem 1rem;border-radius:6px;display:block;
   transition:color .2s,background .2s;cursor:pointer;
+  border:none;background:none;font-family:var(--sans);
 }
-.nav-links li a:hover,.nav-links li a.active{color:var(--brown);background:var(--honey-l)}
+.nav-links li button:hover,.nav-links li button.active{color:var(--brown);background:var(--honey-l)}
 .nav-right{display:flex;align-items:center;gap:1rem}
 .nav-tel{font-size:.875rem;font-weight:500;color:var(--brown-m);text-decoration:none}
 .nav-cta{
@@ -63,12 +123,11 @@ nav{
 }
 .nav-cta:hover{background:var(--honey-d);transform:translateY(-1px)}
 
-/* ─── SHARED COMPONENTS ─── */
+/* ── SHARED ── */
 .sec-kicker{font-family:var(--hand);font-size:1.3rem;color:var(--honey);margin-bottom:.3rem}
 .sec-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.15;letter-spacing:-.01em;color:var(--brown)}
 .sec-title em{font-style:italic}
 .sec-body{margin-top:.9rem;font-size:1rem;color:var(--muted);line-height:1.72;font-weight:300}
-
 .btn-primary{
   display:inline-block;background:var(--honey);color:var(--white);
   padding:.9rem 2.2rem;border-radius:50px;text-decoration:none;
@@ -79,34 +138,25 @@ nav{
 .btn-primary:hover{background:var(--honey-d);transform:translateY(-2px);box-shadow:0 10px 32px rgba(200,137,58,.35)}
 .btn-outline{
   display:inline-block;border:2px solid var(--honey);color:var(--honey);
-  padding:.85rem 2rem;border-radius:50px;text-decoration:none;
+  padding:.85rem 2rem;border-radius:50px;
   font-weight:500;font-size:.95rem;letter-spacing:.02em;
-  background:transparent;transition:all .25s;cursor:pointer;font-family:var(--sans);
+  background:transparent;transition:all .25s;cursor:pointer;font-family:var(--sans);border-style:solid;
 }
 .btn-outline:hover{background:var(--honey);color:var(--white)}
 
-/* page hero banner (non-home pages) */
-.page-hero{
-  background:var(--brown);padding:5rem 5% 4rem;position:relative;overflow:hidden;
-}
-.page-hero::before{
-  content:'';position:absolute;right:-80px;top:-80px;
-  width:400px;height:400px;border-radius:50%;
-  background:rgba(200,137,58,.15);pointer-events:none;
-}
+/* page hero banner */
+.page-hero{background:var(--brown);padding:5rem 5% 4rem;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:rgba(200,137,58,.15);pointer-events:none}
 .page-hero-kicker{font-family:var(--hand);font-size:1.3rem;color:var(--honey);margin-bottom:.4rem}
-.page-hero h1{
-  font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);
-  font-weight:300;color:var(--white);line-height:1.1;letter-spacing:-.02em;
-}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;color:var(--white);line-height:1.1;letter-spacing:-.02em}
 .page-hero h1 em{font-style:italic;color:var(--honey)}
 .page-hero p{font-size:1.05rem;color:rgba(255,255,255,.6);max-width:550px;line-height:1.7;margin-top:1rem;font-weight:300}
 .breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem}
 .breadcrumb span{font-size:.78rem;color:rgba(255,255,255,.4)}
-.breadcrumb a{font-size:.78rem;color:rgba(255,255,255,.5);cursor:pointer;text-decoration:none;transition:color .2s}
-.breadcrumb a:hover{color:var(--honey)}
+.breadcrumb button{font-size:.78rem;color:rgba(255,255,255,.5);cursor:pointer;background:none;border:none;font-family:var(--sans);transition:color .2s;padding:0}
+.breadcrumb button:hover{color:var(--honey)}
 
-/* ─── FOOTER ─── */
+/* ── FOOTER ── */
 footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 .ft-logo{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
@@ -114,17 +164,16 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .ft-desc{font-size:.84rem;color:rgba(255,255,255,.45);line-height:1.7;max-width:240px}
 .ft-col h5{color:rgba(255,255,255,.45);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin-bottom:1rem}
 .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.ft-col ul a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .2s;cursor:pointer}
-.ft-col ul a:hover{color:var(--honey)}
+.ft-col ul button{color:rgba(255,255,255,.5);background:none;border:none;font-size:.85rem;transition:color .2s;cursor:pointer;font-family:var(--sans);text-align:left;padding:0}
+.ft-col ul button:hover{color:var(--honey)}
 .ft-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.3)}
-.ft-bottom a{color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;cursor:pointer}
-.ft-bottom a:hover{color:var(--honey)}
+.ft-bottom span{color:rgba(255,255,255,.3)}
 
-/* ══════════════════════════════════
-   PAGE: HOME
-══════════════════════════════════ */
+/* ══════════════════════
+   HOME
+══════════════════════ */
 .home-hero{
-  min-height:90vh;display:grid;grid-template-columns:1fr 400px;
+  min-height:90vh;display:grid;grid-template-columns:1fr 480px;
   gap:4rem;align-items:center;padding:7rem 5% 6rem;
   background:var(--sand);position:relative;overflow:hidden;
 }
@@ -138,10 +187,10 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .home-h1 em::after{content:'';position:absolute;left:0;bottom:-4px;right:0;height:3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'%3E%3Cpath d='M2 6 C40 2,80 7,120 4 S170 2,198 5' stroke='%23c8893a' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
 .hero-sub{font-size:1.08rem;line-height:1.75;color:var(--muted);max-width:500px;margin-bottom:2.5rem;font-weight:300}
 .hero-btns{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
-.btn-text{color:var(--brown-m);font-size:.9rem;font-weight:400;text-decoration:none;display:flex;align-items:center;gap:.4rem;cursor:pointer;transition:color .2s}
-.btn-text:hover{color:var(--honey)}
-.btn-text::after{content:'→';transition:transform .2s}
-.btn-text:hover::after{transform:translateX(3px)}
+.btn-text-link{color:var(--brown-m);font-size:.9rem;font-weight:400;display:flex;align-items:center;gap:.4rem;cursor:pointer;transition:color .2s;background:none;border:none;font-family:var(--sans)}
+.btn-text-link::after{content:'→';transition:transform .2s}
+.btn-text-link:hover{color:var(--honey)}
+.btn-text-link:hover::after{transform:translateX(3px)}
 .hero-proof{display:flex;align-items:center;gap:.8rem;margin-top:2.2rem;padding-top:2rem;border-top:1px solid var(--border)}
 .proof-stars{color:var(--honey);font-size:1rem;letter-spacing:2px}
 .proof-text{font-size:.82rem;color:var(--muted);line-height:1.45}
@@ -149,27 +198,27 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 
 /* price card */
 .price-card{background:var(--white);border-radius:24px;border:1px solid var(--border);overflow:hidden;box-shadow:0 20px 60px rgba(61,43,26,.1),0 4px 16px rgba(61,43,26,.06)}
-.pc-head{background:var(--brown);padding:1.8rem 2rem;position:relative;overflow:hidden}
-.pc-head::before{content:'';position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;background:rgba(200,137,58,.2)}
-.pc-head h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;font-style:italic;color:var(--white);margin-bottom:.3rem;position:relative;z-index:1}
-.pc-head p{font-size:.8rem;color:rgba(255,255,255,.6);position:relative;z-index:1}
-.rut-pill{display:inline-flex;align-items:center;gap:.4rem;background:var(--honey);border-radius:30px;padding:.3rem .9rem;font-size:.75rem;font-weight:500;color:var(--white);margin-top:.9rem;position:relative;z-index:1}
-.pricelist{padding:1.4rem 2rem}
-.pi{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid var(--border)}
+.pc-head{background:var(--brown);padding:2.2rem 2.4rem;position:relative;overflow:hidden}
+.pc-head::before{content:'';position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:rgba(200,137,58,.2)}
+.pc-head h3{font-family:var(--serif);font-size:1.55rem;font-weight:400;font-style:italic;color:var(--white);margin-bottom:.4rem;position:relative;z-index:1}
+.pc-head p{font-size:.88rem;color:rgba(255,255,255,.6);position:relative;z-index:1}
+.rut-pill{display:inline-flex;align-items:center;gap:.4rem;background:var(--honey);border-radius:30px;padding:.35rem 1rem;font-size:.75rem;font-weight:500;color:var(--white);margin-top:.9rem;position:relative;z-index:1}
+.pricelist{padding:1.6rem 2.4rem}
+.pi{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border)}
 .pi:last-child{border-bottom:none}
-.pi-name{font-size:.88rem;font-weight:500;color:var(--brown)}
-.pi-note{font-size:.72rem;color:var(--muted);margin-top:.1rem}
-.pi-price{font-size:1.1rem;font-weight:600;color:var(--honey);font-family:var(--serif);text-align:right}
-.pi-old{font-size:.72rem;color:var(--muted);text-decoration:line-through;margin-top:.1rem;text-align:right}
-.pc-foot{background:var(--sand);border-top:1px solid var(--border);padding:.9rem 2rem;font-size:.75rem;color:var(--muted);text-align:center}
+.pi-name{font-size:.95rem;font-weight:500;color:var(--brown)}
+.pi-note{font-size:.78rem;color:var(--muted);margin-top:.15rem}
+.pi-price{font-size:1.2rem;font-weight:600;color:var(--honey);font-family:var(--serif);text-align:right}
+.pi-old{font-size:.76rem;color:var(--muted);text-decoration:line-through;margin-top:.15rem;text-align:right}
+.pc-foot{background:var(--sand);border-top:1px solid var(--border);padding:1rem 2.4rem;font-size:.78rem;color:var(--muted);text-align:center}
 
-/* home ribbon */
+/* ribbon */
 .ribbon{background:var(--honey);padding:1rem 5%;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
 .rib-item{display:flex;align-items:center;gap:.5rem;color:var(--white);font-size:.82rem;font-weight:500;letter-spacing:.02em}
 
-/* home services preview */
+/* home services */
 .home-srv{padding:7rem 5%;background:var(--white)}
-.home-srv-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem}
+.home-srv-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem}
 .srv-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .srv-card{background:var(--sand);border:1px solid var(--border);border-radius:20px;padding:2rem 1.8rem;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
 .srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--honey),var(--honey-d));transform:scaleX(0);transform-origin:left;transition:transform .35s}
@@ -190,8 +239,8 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .why-card h4{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--brown);margin-bottom:.3rem}
 .why-card p{font-size:.8rem;color:var(--muted);line-height:1.6}
 .why-visual{position:relative}
-.why-photo{background:linear-gradient(135deg,var(--honey-l),var(--sand2));border-radius:24px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;font-size:7rem;overflow:hidden}
-.why-photo-inner{opacity:.2}
+.why-photo{background:linear-gradient(135deg,var(--honey-l),var(--sand2));border-radius:24px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.why-photo-inner{opacity:.2;font-size:7rem}
 .why-sticker{position:absolute;bottom:-1.5rem;left:-2rem;background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.1rem 1.4rem;box-shadow:0 10px 35px rgba(61,43,26,.1)}
 .why-sticker strong{display:block;font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--honey);line-height:1}
 .why-sticker span{font-size:.75rem;color:var(--muted)}
@@ -199,7 +248,7 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .why-sticker2 strong{display:block;font-family:var(--hand);font-size:1.3rem;color:var(--white);line-height:1}
 .why-sticker2 span{font-size:.7rem;color:rgba(255,255,255,.8)}
 
-/* home reviews strip */
+/* reviews */
 .home-reviews{padding:7rem 5%;background:var(--white)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .rev-card{background:var(--sand);border:1px solid var(--border);border-radius:18px;padding:1.8rem;transition:transform .25s,box-shadow .25s}
@@ -212,12 +261,12 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .rev-meta{font-size:.73rem;color:var(--muted);margin-top:.1rem}
 .rev-author{display:flex;align-items:center;gap:.7rem}
 
-/* ══════════════════════════════════
-   PAGE: TJÄNSTER
-══════════════════════════════════ */
+/* ══════════════════════
+   TJÄNSTER
+══════════════════════ */
 .tjanster-grid{padding:5rem 5%;background:var(--sand)}
 .tjanster-big-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.tj-card{background:var(--white);border:1px solid var(--border);border-radius:22px;overflow:hidden;transition:all .3s;cursor:pointer}
+.tj-card{background:var(--white);border:1px solid var(--border);border-radius:22px;overflow:hidden;transition:all .3s}
 .tj-card:hover{box-shadow:0 16px 50px rgba(61,43,26,.1);transform:translateY(-4px)}
 .tj-card-top{padding:2.5rem 2.2rem;background:var(--sand)}
 .tj-card-top .srv-ico{font-size:2.2rem;margin-bottom:1.2rem}
@@ -227,25 +276,21 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .tj-price-after{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--honey)}
 .tj-price-before{font-size:.8rem;color:var(--muted);text-decoration:line-through;margin-left:.4rem}
 .tj-rut{font-size:.72rem;color:var(--muted);margin-top:.2rem}
-.tj-cta{font-size:.82rem;color:var(--honey);font-weight:500;cursor:pointer;display:flex;align-items:center;gap:.3rem}
+.tj-cta{font-size:.82rem;color:var(--honey);font-weight:500;cursor:pointer;display:flex;align-items:center;gap:.3rem;background:none;border:none;font-family:var(--sans)}
 .tj-cta::after{content:'→';transition:transform .2s}
 .tj-cta:hover::after{transform:translateX(3px)}
-
-/* included list */
 .tjanster-includes{padding:5rem 5%;background:var(--white)}
 .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3rem}
 .inc-col h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--brown);margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:2px solid var(--honey-l)}
 .inc-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
 .inc-list li{font-size:.875rem;color:var(--muted);display:flex;gap:.6rem;align-items:flex-start;line-height:1.5}
 .inc-list li::before{content:'✓';color:var(--honey);font-weight:700;flex-shrink:0;margin-top:1px}
-
-/* rut explainer */
 .rut-section{background:var(--brown);padding:6rem 5%}
 .rut-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1100px;margin:0 auto}
 .rut-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:2.2rem}
 .rut-box h4{font-family:var(--serif);font-size:1.15rem;font-style:italic;font-weight:300;color:var(--white);margin-bottom:1.5rem}
 .rut-row{display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.875rem}
-.rut-row.total{border:none;padding-top:1.2rem;margin-top:.6rem;border-top:1px solid rgba(255,255,255,.15)}
+.rut-row.total{border-bottom:none;padding-top:1.2rem;margin-top:.6rem;border-top:1px solid rgba(255,255,255,.15)}
 .rut-lbl{color:rgba(255,255,255,.65)}
 .rut-val{color:var(--white);font-weight:500}
 .rut-val.cut{color:#a8e6b8}
@@ -254,32 +299,28 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .rut-pt{display:flex;gap:.8rem;align-items:flex-start;font-size:.88rem;color:rgba(255,255,255,.75)}
 .rut-dot{width:20px;height:20px;border-radius:50%;background:rgba(200,137,58,.3);border:1px solid var(--honey);color:var(--honey);font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 
-/* ══════════════════════════════════
-   PAGE: OM OSS
-══════════════════════════════════ */
+/* ══════════════════════
+   OM OSS
+══════════════════════ */
 .om-story{padding:6rem 5%;background:var(--sand)}
 .om-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-.om-photo{background:linear-gradient(135deg,var(--honey-l),var(--sand2));border-radius:24px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:7rem;overflow:hidden;position:relative}
-.om-photo-inner{opacity:.2}
+.om-photo{background:linear-gradient(135deg,var(--honey-l),var(--sand2));border-radius:24px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.om-photo-inner{opacity:.2;font-size:7rem}
 .om-sticker{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1rem 1.3rem;box-shadow:0 8px 30px rgba(61,43,26,.1)}
 .om-sticker strong{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--honey);line-height:1}
 .om-sticker span{font-size:.73rem;color:var(--muted)}
-.om-timeline{margin-top:2.5rem;display:flex;flex-direction:column;gap:0}
+.om-timeline{margin-top:2.5rem;display:flex;flex-direction:column}
 .tl-item{display:flex;gap:1.2rem;padding-bottom:2rem;position:relative}
 .tl-item:not(:last-child)::after{content:'';position:absolute;left:18px;top:38px;bottom:0;width:1px;background:var(--border)}
-.tl-year{font-family:var(--hand);font-size:1rem;color:var(--honey);width:38px;height:38px;border-radius:50%;border:1.5px solid var(--honey);background:var(--sand);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;font-weight:600;font-family:var(--sans)}
+.tl-year{font-size:.75rem;font-weight:600;color:var(--honey);width:38px;height:38px;border-radius:50%;border:1.5px solid var(--honey);background:var(--sand);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .tl-content h5{font-size:.9rem;font-weight:500;color:var(--brown);padding-top:.6rem;margin-bottom:.2rem}
 .tl-content p{font-size:.835rem;color:var(--muted);line-height:1.6}
-
-/* team */
 .om-team{padding:6rem 5%;background:var(--white)}
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
 .team-card{text-align:center}
 .team-av{width:100%;aspect-ratio:1;border-radius:20px;background:linear-gradient(135deg,var(--honey-l),var(--sand2));display:flex;align-items:center;justify-content:center;font-family:var(--hand);font-size:2.5rem;color:var(--honey-d);font-weight:600;margin-bottom:1rem}
 .team-name{font-family:var(--serif);font-size:1.1rem;color:var(--brown);font-weight:400}
 .team-role{font-size:.78rem;color:var(--muted);margin-top:.2rem}
-
-/* values */
 .om-values{padding:6rem 5%;background:var(--sand)}
 .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .val-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem 1.8rem}
@@ -287,11 +328,11 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .val-card h4{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--brown);margin-bottom:.6rem}
 .val-card p{font-size:.875rem;color:var(--muted);line-height:1.65}
 
-/* ══════════════════════════════════
-   PAGE: PRISER
-══════════════════════════════════ */
+/* ══════════════════════
+   PRISER
+══════════════════════ */
 .priser-page{padding:5rem 5%;background:var(--sand)}
-.priser-tabs{display:flex;gap:.5rem;margin-bottom:3rem;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:.4rem;display:inline-flex}
+.priser-tabs{display:inline-flex;gap:.5rem;margin-bottom:3rem;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:.4rem}
 .tab-btn{padding:.55rem 1.4rem;border-radius:8px;border:none;background:transparent;font-family:var(--sans);font-size:.875rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s}
 .tab-btn.active{background:var(--honey);color:var(--white)}
 .tab-btn:hover:not(.active){background:var(--honey-l);color:var(--brown)}
@@ -308,29 +349,22 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .td-note{font-size:.75rem;color:var(--muted);margin-top:.1rem}
 .td-price-new{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--honey)}
 .td-price-old{font-size:.75rem;color:var(--muted);text-decoration:line-through}
-
 .priser-note{margin-top:1.5rem;background:var(--honey-l);border:1px solid rgba(200,137,58,.2);border-radius:12px;padding:1.2rem 1.5rem;font-size:.85rem;color:var(--brown-m);line-height:1.6}
 .priser-note strong{color:var(--honey-d)}
 
-/* ══════════════════════════════════
-   PAGE: KONTAKT
-══════════════════════════════════ */
+/* ══════════════════════
+   KONTAKT
+══════════════════════ */
 .kontakt-page{padding:5rem 5%;background:var(--sand)}
 .kontakt-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start}
-
-/* contact info */
 .k-info-cards{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}
 .k-info-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.4rem 1.6rem;display:flex;gap:1rem;align-items:flex-start}
 .k-icon{width:44px;height:44px;background:var(--honey-l);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
 .k-info-card h5{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500;margin-bottom:.25rem}
 .k-info-card p{font-size:.9rem;color:var(--brown);font-weight:500;line-height:1.4}
 .k-info-card span{font-size:.78rem;color:var(--muted)}
-
-/* map */
 .map-wrap{margin-top:2rem;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 20px rgba(61,43,26,.06)}
 .map-wrap iframe{display:block;width:100%;height:320px;border:none}
-
-/* form */
 .k-form{background:var(--white);border-radius:24px;border:1px solid var(--border);overflow:hidden;box-shadow:0 8px 40px rgba(61,43,26,.07)}
 .k-form-head{background:var(--honey);padding:2rem 2.2rem}
 .k-form-head h3{font-family:var(--serif);font-size:1.5rem;font-weight:400;font-style:italic;color:var(--white);margin-bottom:.25rem}
@@ -345,16 +379,16 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 .form-submit{width:100%;background:var(--honey);color:var(--white);border:none;border-radius:50px;padding:1rem;font-size:.95rem;font-weight:500;font-family:var(--sans);cursor:pointer;transition:all .25s;margin-top:.4rem;box-shadow:0 4px 16px rgba(200,137,58,.25)}
 .form-submit:hover{background:var(--honey-d);transform:translateY(-1px)}
 .form-note{font-size:.73rem;color:var(--muted);text-align:center;margin-top:.8rem}
-
-/* success */
 .form-success{display:none;text-align:center;padding:3rem 2rem}
 .form-success .success-ico{font-size:3rem;margin-bottom:1rem}
 .form-success h4{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--brown);margin-bottom:.5rem}
 .form-success p{font-size:.9rem;color:var(--muted)}
+.field-error{border-color:#e85a3a !important}
+.error-msg{font-size:.72rem;color:#e85a3a;margin-top:.2rem}
 
-/* ══════════════════════════════════
+/* ══════════════════════
    RESPONSIVE
-══════════════════════════════════ */
+══════════════════════ */
 @media(max-width:960px){
   .home-hero{grid-template-columns:1fr;min-height:auto;padding:5rem 5%}
   .price-card{display:none}
@@ -363,12 +397,14 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
   .rev-grid{grid-template-columns:1fr}
   .ft{grid-template-columns:1fr 1fr;gap:2rem}
   .nav-links,.nav-tel{display:none}
-  .why-sticker2,.om-sticker{display:none}
-  .home-srv-head{flex-direction:column;align-items:flex-start;gap:1rem}
-  .priser-tabs{flex-wrap:wrap}
+  .why-sticker2{display:none}
+  .home-srv-head{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:600px){
   .includes-grid,.team-grid,.values-grid,.why-grid{grid-template-columns:1fr}
+  .fr2{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr}
+  nav{padding:0 4%}
 }
 </style>
 </head>
@@ -376,43 +412,43 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
 
 <!-- ═══ NAV ═══ -->
 <nav>
-  <div class="logo" onclick="showPage('home')">
+  <button class="logo" onclick="showPage('home')" aria-label="MS Service – Gå till startsidan">
     <span class="logo-dot"></span>MS Service
-  </div>
-  <ul class="nav-links">
-    <li><a onclick="showPage('home')" id="nav-home">Hem</a></li>
-    <li><a onclick="showPage('tjanster')" id="nav-tjanster">Tjänster</a></li>
-    <li><a onclick="showPage('priser')" id="nav-priser">Priser</a></li>
-    <li><a onclick="showPage('om')" id="nav-om">Om oss</a></li>
-    <li><a onclick="showPage('kontakt')" id="nav-kontakt">Kontakt</a></li>
+  </button>
+  <ul class="nav-links" role="navigation" aria-label="Huvudmeny">
+    <li><button id="nav-home" onclick="showPage('home')">Hem</button></li>
+    <li><button id="nav-tjanster" onclick="showPage('tjanster')">Tjänster</button></li>
+    <li><button id="nav-priser" onclick="showPage('priser')">Priser</button></li>
+    <li><button id="nav-om" onclick="showPage('om')">Om oss</button></li>
+    <li><button id="nav-kontakt" onclick="showPage('kontakt')">Kontakt</button></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:040123456" class="nav-tel">040-123 45 67</a>
-    <button class="nav-cta" onclick="showPage('kontakt')">Boka städning</button>
+    <a href="tel:+46401234567" class="nav-tel" aria-label="Ring oss: 040-123 45 67">040-123 45 67</a>
+    <button class="nav-cta" onclick="showPage('kontakt')" aria-label="Boka städning">Boka städning</button>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════
-     PAGE: HOME
-═══════════════════════════════════════ -->
-<div id="page-home" class="page active">
-  <section class="home-hero">
+<!-- ═══════════════════════════════
+     PAGE: HEM
+═══════════════════════════════ -->
+<main id="page-home" class="page active" role="main">
+  <section class="home-hero" aria-labelledby="hero-heading">
     <div class="hero-l">
-      <div class="hero-tag">Malmös städbolag sedan 2010</div>
-      <h1 class="home-h1">Rent hem,<br/><em>lugnt hjärta.</em></h1>
+      <div class="hero-tag" aria-label="Malmös städbolag sedan 2010">Malmös städbolag sedan 2010</div>
+      <h1 class="home-h1" id="hero-heading">Rent hem,<br/><em>lugnt hjärta.</em></h1>
       <p class="hero-sub">Vi städar med omsorg och äkta yrkesstolthet. Du betalar halva priset tack vare RUT-avdrag – resten sköter vi.</p>
       <div class="hero-btns">
-        <button class="btn-primary" onclick="showPage('kontakt')">Boka gratis offert</button>
-        <span class="btn-text" onclick="showPage('priser')">Vad kostar det?</span>
+        <button class="btn-primary" onclick="showPage('kontakt')" aria-label="Boka gratis offert">Boka gratis offert</button>
+        <button class="btn-text-link" onclick="showPage('priser')" aria-label="Se priser">Vad kostar det?</button>
       </div>
-      <div class="hero-proof">
-        <div class="proof-stars">★★★★★</div>
+      <div class="hero-proof" aria-label="Kundbetyg">
+        <div class="proof-stars" aria-hidden="true">★★★★★</div>
         <div class="proof-text">
           <strong>4,9 av 5</strong> – 340 omdömen på Google<br/>från kunder i Malmö med omnejd
         </div>
       </div>
     </div>
-    <div class="hero-r">
+    <div class="hero-r" aria-label="Prislista med RUT-avdrag">
       <div class="price-card">
         <div class="pc-head">
           <h3>Priser med RUT-avdrag</h3>
@@ -431,195 +467,120 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
     </div>
   </section>
 
-  <div class="ribbon">
-    <div class="rib-item">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-      Fullt försäkrade
-    </div>
-    <div class="rib-item">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      RUT-avdrag – 50% rabatt
-    </div>
-    <div class="rib-item">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-      Nöjdhetsgaranti
-    </div>
-    <div class="rib-item">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
-      Miljömärkta produkter
-    </div>
-    <div class="rib-item">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-      Flexibla tider, även helg
-    </div>
+  <div class="ribbon" role="list" aria-label="Fördelar med MS Service">
+    <div class="rib-item" role="listitem"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Fullt försäkrade</div>
+    <div class="rib-item" role="listitem"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>RUT-avdrag 50%</div>
+    <div class="rib-item" role="listitem"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>Nöjdhetsgaranti</div>
+    <div class="rib-item" role="listitem"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>Miljömärkta produkter</div>
+    <div class="rib-item" role="listitem"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Flexibla tider, även helg</div>
   </div>
 
-  <section class="home-srv">
+  <section class="home-srv" aria-labelledby="srv-heading">
     <div class="home-srv-head">
-      <div>
-        <div class="sec-kicker">Våra tjänster</div>
-        <h2 class="sec-title">Vi tar hand om <em>allt</em></h2>
-      </div>
+      <div><div class="sec-kicker">Våra tjänster</div><h2 class="sec-title" id="srv-heading">Vi tar hand om <em>allt</em></h2></div>
       <button class="btn-outline" onclick="showPage('tjanster')">Se alla tjänster</button>
     </div>
     <div class="srv-grid-3">
-      <div class="srv-card" onclick="showPage('tjanster')">
-        <div class="srv-ico">🏠</div>
-        <h3>Hemstädning</h3>
-        <p>Regelbunden städning anpassad efter dig. Valfri frekvens, samma noggranna städare varje gång.</p>
-        <div><span class="srv-price">349 kr/tim</span><span class="srv-price-old">698 kr</span></div>
-      </div>
-      <div class="srv-card" onclick="showPage('tjanster')">
-        <div class="srv-ico">✨</div>
-        <h3>Storstädning</h3>
-        <p>Grundlig städning från golv till tak. Perfekt inför flytt, fest eller säsongsskifte.</p>
-        <div><span class="srv-price">fr. 1 495 kr</span><span class="srv-price-old">fr. 2 990 kr</span></div>
-      </div>
-      <div class="srv-card" onclick="showPage('tjanster')">
-        <div class="srv-ico">📦</div>
-        <h3>Flyttstädning</h3>
-        <p>Garanterat godkänd städning med fri reklamation om du mot förmodan inte skulle få godkänt.</p>
-        <div><span class="srv-price">fr. 1 745 kr</span><span class="srv-price-old">fr. 3 490 kr</span></div>
-      </div>
+      <article class="srv-card" onclick="showPage('tjanster')"><div class="srv-ico" aria-hidden="true">🏠</div><h3>Hemstädning</h3><p>Regelbunden städning anpassad efter dig. Valfri frekvens, samma noggranna städare varje gång.</p><div><span class="srv-price">349 kr/tim</span><span class="srv-price-old">698 kr</span></div></article>
+      <article class="srv-card" onclick="showPage('tjanster')"><div class="srv-ico" aria-hidden="true">✨</div><h3>Storstädning</h3><p>Grundlig städning från golv till tak. Perfekt inför flytt, fest eller säsongsskifte.</p><div><span class="srv-price">fr. 1 495 kr</span><span class="srv-price-old">fr. 2 990 kr</span></div></article>
+      <article class="srv-card" onclick="showPage('tjanster')"><div class="srv-ico" aria-hidden="true">📦</div><h3>Flyttstädning</h3><p>Garanterat godkänd städning med fri reklamation om du mot förmodan inte skulle få godkänt.</p><div><span class="srv-price">fr. 1 745 kr</span><span class="srv-price-old">fr. 3 490 kr</span></div></article>
     </div>
   </section>
 
-  <section class="home-why">
+  <section class="home-why" aria-labelledby="why-heading">
     <div class="why-inner">
       <div class="why-visual">
-        <div class="why-photo"><div class="why-photo-inner">🧹</div></div>
+        <div class="why-photo"><div class="why-photo-inner" aria-hidden="true">🧹</div></div>
         <div class="why-sticker"><strong>1 400+</strong><span>nöjda kunder</span></div>
         <div class="why-sticker2"><strong>Sedan 2010</strong><span>i Malmö</span></div>
       </div>
       <div>
         <div class="sec-kicker">Varför MS Service?</div>
-        <h2 class="sec-title">Städning med <em>riktigt hjärta</em></h2>
+        <h2 class="sec-title" id="why-heading">Städning med <em>riktigt hjärta</em></h2>
         <p class="sec-body">Vi är ett litet, personligt städbolag – inte ett anonymt storföretag. Hos oss möts du av samma städare varje gång, och vi lär känna ditt hem lika väl som du.</p>
         <div class="why-grid">
-          <div class="why-card"><div class="why-icon">🤝</div><h4>Pålitlighet</h4><p>Vi håller alltid vad vi lovar och kommer i tid.</p></div>
-          <div class="why-card"><div class="why-icon">🌿</div><h4>Miljöansvar</h4><p>Enbart miljömärkta och allergitest medel.</p></div>
-          <div class="why-card"><div class="why-icon">🏅</div><h4>Kompetens</h4><p>Utbildade städare med lång erfarenhet.</p></div>
-          <div class="why-card"><div class="why-icon">🔒</div><h4>Trygghet</h4><p>Fullt försäkrade och bakgrundskontrollerade.</p></div>
+          <div class="why-card"><div class="why-icon" aria-hidden="true">🤝</div><h4>Pålitlighet</h4><p>Vi håller alltid vad vi lovar och kommer i tid.</p></div>
+          <div class="why-card"><div class="why-icon" aria-hidden="true">🌿</div><h4>Miljöansvar</h4><p>Enbart miljömärkta och allergitest medel.</p></div>
+          <div class="why-card"><div class="why-icon" aria-hidden="true">🏅</div><h4>Kompetens</h4><p>Utbildade städare med lång erfarenhet.</p></div>
+          <div class="why-card"><div class="why-icon" aria-hidden="true">🔒</div><h4>Trygghet</h4><p>Fullt försäkrade och bakgrundskontrollerade.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="home-reviews">
+  <section class="home-reviews" aria-labelledby="reviews-heading">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-      <div>
-        <div class="sec-kicker">Vad kunderna säger</div>
-        <h2 class="sec-title">Riktiga <em>omdömen</em></h2>
-      </div>
-      <div style="text-align:right">
+      <div><div class="sec-kicker">Vad kunderna säger</div><h2 class="sec-title" id="reviews-heading">Riktiga <em>omdömen</em></h2></div>
+      <div style="text-align:right" aria-label="Snittbetyg 4,9 av 5 baserat på 340 recensioner">
         <div style="font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--brown);line-height:1">4,9</div>
-        <div style="color:var(--honey);font-size:.9rem;letter-spacing:2px">★★★★★</div>
+        <div style="color:var(--honey);font-size:.9rem;letter-spacing:2px" aria-hidden="true">★★★★★</div>
         <div style="font-size:.75rem;color:var(--muted)">340 Google-recensioner</div>
       </div>
     </div>
     <div class="rev-grid">
-      <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-q">"</div><p class="rev-text">Har haft MS Service varannan vecka i snart ett år. Alltid punktliga, alltid noggranna. Lägenheten doftar fräscht – värt varenda krona.</p><div class="rev-author"><div class="rev-av">A</div><div><div class="rev-name">Anna K.</div><div class="rev-meta">Hemstädning · Malmö</div></div></div></div>
-      <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-q">"</div><p class="rev-text">Anlitade dem för flyttstädning och fick tillbaka hela depositionen. Supernoggrant och enkelt. Fakturan kom med RUT-avdraget redan avdraget!</p><div class="rev-author"><div class="rev-av">M</div><div><div class="rev-name">Marcus B.</div><div class="rev-meta">Flyttstädning · Lund</div></div></div></div>
-      <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-q">"</div><p class="rev-text">Storstädning inför jul. De tog tag i allt – bakom spisen, inuti skåpen, fönstren. Familjen var imponerad. Bokar igen till påsk!</p><div class="rev-author"><div class="rev-av">L</div><div><div class="rev-name">Linda H.</div><div class="rev-meta">Storstädning · Vellinge</div></div></div></div>
+      <article class="rev-card"><div class="rev-stars" aria-label="5 av 5 stjärnor">★★★★★</div><div class="rev-q" aria-hidden="true">"</div><p class="rev-text">Har haft MS Service varannan vecka i snart ett år. Alltid punktliga, alltid noggranna. Lägenheten doftar fräscht – värt varenda krona.</p><div class="rev-author"><div class="rev-av" aria-hidden="true">A</div><div><div class="rev-name">Anna K.</div><div class="rev-meta">Hemstädning · Malmö</div></div></div></article>
+      <article class="rev-card"><div class="rev-stars" aria-label="5 av 5 stjärnor">★★★★★</div><div class="rev-q" aria-hidden="true">"</div><p class="rev-text">Anlitade dem för flyttstädning och fick tillbaka hela depositionen. Supernoggrant och enkelt. Fakturan kom med RUT-avdraget redan avdraget!</p><div class="rev-author"><div class="rev-av" aria-hidden="true">M</div><div><div class="rev-name">Marcus B.</div><div class="rev-meta">Flyttstädning · Lund</div></div></div></article>
+      <article class="rev-card"><div class="rev-stars" aria-label="5 av 5 stjärnor">★★★★★</div><div class="rev-q" aria-hidden="true">"</div><p class="rev-text">Storstädning inför jul. De tog tag i allt – bakom spisen, inuti skåpen, fönstren. Familjen var imponerad. Bokar igen till påsk!</p><div class="rev-author"><div class="rev-av" aria-hidden="true">L</div><div><div class="rev-name">Linda H.</div><div class="rev-meta">Storstädning · Vellinge</div></div></div></article>
     </div>
   </section>
 
   <div style="background:var(--honey);padding:4rem 5%;text-align:center">
     <div style="font-family:var(--hand);font-size:1.3rem;color:rgba(255,255,255,.8);margin-bottom:.5rem">Redo att börja?</div>
     <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--white);margin-bottom:1.5rem">Få din gratis offert idag</h2>
-    <button class="btn-primary" style="background:var(--white);color:var(--honey)" onclick="showPage('kontakt')">Kontakta oss</button>
+    <button class="btn-primary" style="background:var(--white);color:var(--honey)" onclick="showPage('kontakt')">Kontakta oss nu</button>
   </div>
 
   <footer>
     <div class="ft">
-      <div>
-        <div class="ft-logo"><span class="ft-dot"></span>MS Service</div>
-        <p class="ft-desc">Personlig och professionell städtjänst i Malmö sedan 2010. RUT-avdrag, nöjdhetsgaranti och miljövänliga produkter.</p>
-      </div>
-      <div class="ft-col"><h5>Sidor</h5><ul><li><a onclick="showPage('home')">Hem</a></li><li><a onclick="showPage('tjanster')">Tjänster</a></li><li><a onclick="showPage('priser')">Priser</a></li><li><a onclick="showPage('om')">Om oss</a></li><li><a onclick="showPage('kontakt')">Kontakt</a></li></ul></div>
-      <div class="ft-col"><h5>Tjänster</h5><ul><li><a onclick="showPage('tjanster')">Hemstädning</a></li><li><a onclick="showPage('tjanster')">Storstädning</a></li><li><a onclick="showPage('tjanster')">Flyttstädning</a></li><li><a onclick="showPage('tjanster')">Kontorsstädning</a></li><li><a onclick="showPage('tjanster')">Fönsterputsning</a></li></ul></div>
-      <div class="ft-col"><h5>Kontakt</h5><ul><li><a href="tel:040123456">040-123 45 67</a></li><li><a href="mailto:info@msservice.se">info@msservice.se</a></li><li><a onclick="showPage('kontakt')">Storgatan 14, Malmö</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+      <div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig och professionell städtjänst i Malmö sedan 2010. RUT-avdrag, nöjdhetsgaranti och miljövänliga produkter.</p></div>
+      <div class="ft-col"><h5>Sidor</h5><ul><li><button onclick="showPage('home')">Hem</button></li><li><button onclick="showPage('tjanster')">Tjänster</button></li><li><button onclick="showPage('priser')">Priser</button></li><li><button onclick="showPage('om')">Om oss</button></li><li><button onclick="showPage('kontakt')">Kontakt</button></li></ul></div>
+      <div class="ft-col"><h5>Tjänster</h5><ul><li><button onclick="showPage('tjanster')">Hemstädning</button></li><li><button onclick="showPage('tjanster')">Storstädning</button></li><li><button onclick="showPage('tjanster')">Flyttstädning</button></li><li><button onclick="showPage('tjanster')">Kontorsstädning</button></li><li><button onclick="showPage('tjanster')">Fönsterputsning</button></li></ul></div>
+      <div class="ft-col"><h5>Kontakt</h5><ul><li><button onclick="window.location='tel:+46401234567'">040-123 45 67</button></li><li><button onclick="window.location='mailto:info@msservice.se'">info@msservice.se</button></li><li><button onclick="showPage('kontakt')">Boka städning</button></li><li><button onclick="void(0)">Instagram</button></li><li><button onclick="void(0)">Facebook</button></li></ul></div>
     </div>
-    <div class="ft-bottom"><span>© 2025 MS Service AB</span><span><a href="#">Integritetspolicy</a> · <a href="#">Villkor</a></span></div>
+    <div class="ft-bottom"><span>© 2025 MS Service AB · Org.nr 556xxx-xxxx</span><span><button onclick="void(0)" style="color:rgba(255,255,255,.3);background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:.78rem">Integritetspolicy</button> · <button onclick="void(0)" style="color:rgba(255,255,255,.3);background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:.78rem">Villkor</button></span></div>
   </footer>
-</div>
+</main>
 
-<!-- ═══════════════════════════════════════
+<!-- ═══════════════════════════════
      PAGE: TJÄNSTER
-═══════════════════════════════════════ -->
-<div id="page-tjanster" class="page">
+═══════════════════════════════ -->
+<main id="page-tjanster" class="page" role="main">
   <div class="page-hero">
-    <div class="breadcrumb"><a onclick="showPage('home')">Hem</a><span>/</span><span style="color:rgba(255,255,255,.7)">Tjänster</span></div>
+    <div class="breadcrumb"><button onclick="showPage('home')">Hem</button><span>/</span><span style="color:rgba(255,255,255,.7)">Tjänster</span></div>
     <div class="page-hero-kicker">Vad vi erbjuder</div>
     <h1>Tjänster för <em>varje behov</em></h1>
-    <p>Från hemstädning till kontorsstädning – vi levererar resultat med omsorg. Alla priser är efter RUT-avdrag.</p>
+    <p>Från hemstädning till kontorsstädning – vi levererar med omsorg. Alla priser är efter RUT-avdrag.</p>
   </div>
-
   <section class="tjanster-grid">
     <div class="tjanster-big-grid">
-      <div class="tj-card" onclick="showPage('kontakt')">
-        <div class="tj-card-top"><div class="srv-ico">🏠</div><h3>Hemstädning</h3><p>Regelbunden städning av hela hemmet – kök, badrum, sovrum och vardagsrum. Du väljer hur ofta och vi anpassar oss helt efter dina önskemål. Alltid samma städare, alltid samma höga standard.</p></div>
-        <div class="tj-card-bottom"><div><div class="tj-price-after">349 kr/tim<span class="tj-price-before">698 kr</span></div><div class="tj-rut">efter RUT-avdrag · inkl. moms</div></div><div class="tj-cta">Boka nu</div></div>
-      </div>
-      <div class="tj-card" onclick="showPage('kontakt')">
-        <div class="tj-card-top"><div class="srv-ico">✨</div><h3>Storstädning</h3><p>En grundlig städning från golv till tak som gör att hemmet verkligen skiner. Vi rengör bakom vitvaror, inuti skåp och på alla ställen som vanlig underhållsstädning missar. Perfekt inför flytt, fest eller bara när du vill ha ett fräscht start.</p></div>
-        <div class="tj-card-bottom"><div><div class="tj-price-after">fr. 1 495 kr<span class="tj-price-before">fr. 2 990 kr</span></div><div class="tj-rut">efter RUT-avdrag · inkl. moms</div></div><div class="tj-cta">Boka nu</div></div>
-      </div>
-      <div class="tj-card" onclick="showPage('kontakt')">
-        <div class="tj-card-top"><div class="srv-ico">📦</div><h3>Flyttstädning</h3><p>Garanterat godkänd städning enligt hyresvärdens krav. Vi ger fri reklamation om du mot förmodan inte skulle få godkänt – vi återkommer utan extra kostnad tills hyresvärden är nöjd. Lugn i magen för dig.</p></div>
-        <div class="tj-card-bottom"><div><div class="tj-price-after">fr. 1 745 kr<span class="tj-price-before">fr. 3 490 kr</span></div><div class="tj-rut">efter RUT-avdrag · inkl. moms</div></div><div class="tj-cta">Boka nu</div></div>
-      </div>
-      <div class="tj-card" onclick="showPage('kontakt')">
-        <div class="tj-card-top"><div class="srv-ico">🏢</div><h3>Kontorsstädning</h3><p>En fräsch och ren arbetsplats ökar välmåendet och produktiviteten. Vi städar utanför kontorstid och lägger upp ett schema som passar er verksamhet. Fast pris per månad utan dolda avgifter.</p></div>
-        <div class="tj-card-bottom"><div><div class="tj-price-after">Offert på begäran</div><div class="tj-rut">baserat på yta och frekvens</div></div><div class="tj-cta">Kontakta oss</div></div>
-      </div>
-      <div class="tj-card" onclick="showPage('kontakt')">
-        <div class="tj-card-top"><div class="srv-ico">🪟</div><h3>Fönsterputsning</h3><p>Skinande rena fönster – inne och ute. Professionell utrustning som säkerställer inga ränder oavsett storlek och höjd. Boka som engångstjänst eller lägg till på din löpande städning.</p></div>
-        <div class="tj-card-bottom"><div><div class="tj-price-after">fr. 250 kr<span class="tj-price-before">fr. 499 kr</span></div><div class="tj-rut">efter RUT-avdrag · inkl. moms</div></div><div class="tj-cta">Boka nu</div></div>
-      </div>
-      <div class="tj-card" onclick="showPage('kontakt')">
-        <div class="tj-card-top"><div class="srv-ico">🏗️</div><h3>Trappstädning</h3><p>Löpande städning av trapphus och gemensamma utrymmen för bostadsrättsföreningar och fastighetsägare. Vi erbjuder årsavtal med fast månadspris och anpassar frekvens efter behov.</p></div>
-        <div class="tj-card-bottom"><div><div class="tj-price-after">fr. 799 kr/mån</div><div class="tj-rut">årsavtal · faktureras månadsvis</div></div><div class="tj-cta">Kontakta oss</div></div>
-      </div>
+      <article class="tj-card"><div class="tj-card-top"><div class="srv-ico" aria-hidden="true">🏠</div><h3>Hemstädning</h3><p>Regelbunden städning av hela hemmet – kök, badrum, sovrum och vardagsrum. Du väljer hur ofta och vi anpassar oss helt efter dina önskemål. Alltid samma städare, alltid samma höga standard.</p></div><div class="tj-card-bottom"><div><div class="tj-price-after">349 kr/tim<span class="tj-price-before"> 698 kr</span></div><div class="tj-rut">efter RUT-avdrag · inkl. moms</div></div><button class="tj-cta" onclick="showPage('kontakt')">Boka nu</button></div></article>
+      <article class="tj-card"><div class="tj-card-top"><div class="srv-ico" aria-hidden="true">✨</div><h3>Storstädning</h3><p>En grundlig städning från golv till tak. Vi rengör bakom vitvaror, inuti skåp och på alla ställen som vanlig underhållsstädning missar. Perfekt inför flytt, fest eller säsongsskifte.</p></div><div class="tj-card-bottom"><div><div class="tj-price-after">fr. 1 495 kr<span class="tj-price-before"> fr. 2 990 kr</span></div><div class="tj-rut">efter RUT-avdrag · inkl. moms</div></div><button class="tj-cta" onclick="showPage('kontakt')">Boka nu</button></div></article>
+      <article class="tj-card"><div class="tj-card-top"><div class="srv-ico" aria-hidden="true">📦</div><h3>Flyttstädning</h3><p>Garanterat godkänd städning enligt hyresvärdens krav. Fri reklamation om du mot förmodan inte skulle få godkänt – vi återkommer utan extra kostnad tills hyresvärden är nöjd.</p></div><div class="tj-card-bottom"><div><div class="tj-price-after">fr. 1 745 kr<span class="tj-price-before"> fr. 3 490 kr</span></div><div class="tj-rut">efter RUT-avdrag · inkl. moms</div></div><button class="tj-cta" onclick="showPage('kontakt')">Boka nu</button></div></article>
+      <article class="tj-card"><div class="tj-card-top"><div class="srv-ico" aria-hidden="true">🏢</div><h3>Kontorsstädning</h3><p>En fräsch och ren arbetsplats ökar välmåendet och produktiviteten. Vi städar utanför kontorstid och lägger upp ett schema som passar er verksamhet. Fast pris utan dolda avgifter.</p></div><div class="tj-card-bottom"><div><div class="tj-price-after">Offert på begäran</div><div class="tj-rut">baserat på yta och frekvens</div></div><button class="tj-cta" onclick="showPage('kontakt')">Kontakta oss</button></div></article>
+      <article class="tj-card"><div class="tj-card-top"><div class="srv-ico" aria-hidden="true">🪟</div><h3>Fönsterputsning</h3><p>Skinande rena fönster – inne och ute. Professionell utrustning, inga ränder oavsett storlek och höjd. Boka som engångstjänst eller lägg till på din löpande städning.</p></div><div class="tj-card-bottom"><div><div class="tj-price-after">fr. 250 kr<span class="tj-price-before"> fr. 499 kr</span></div><div class="tj-rut">efter RUT-avdrag · inkl. moms</div></div><button class="tj-cta" onclick="showPage('kontakt')">Boka nu</button></div></article>
+      <article class="tj-card"><div class="tj-card-top"><div class="srv-ico" aria-hidden="true">🏗️</div><h3>Trappstädning</h3><p>Löpande städning av trapphus och gemensamma utrymmen för bostadsrättsföreningar och fastighetsägare. Årsavtal med fast månadspris och anpassad frekvens.</p></div><div class="tj-card-bottom"><div><div class="tj-price-after">fr. 799 kr/mån</div><div class="tj-rut">årsavtal · faktureras månadsvis</div></div><button class="tj-cta" onclick="showPage('kontakt')">Kontakta oss</button></div></article>
     </div>
   </section>
-
-  <section class="tjanster-includes">
+  <section class="tjanster-includes" aria-labelledby="includes-heading">
     <div class="sec-kicker">Vad ingår</div>
-    <h2 class="sec-title">Alltid <em>inkluderat</em></h2>
+    <h2 class="sec-title" id="includes-heading">Alltid <em>inkluderat</em></h2>
     <div class="includes-grid">
-      <div class="inc-col">
-        <h4>Kök</h4>
-        <ul class="inc-list">
-          <li>Diskbänk och kranar</li><li>Spis, ugn och köksfläkt utsida</li><li>Kylskåp utsida</li><li>Skåp och lådor utsida</li><li>Bänkytor och kakel</li><li>Golv – sopas och moppas</li>
-        </ul>
-      </div>
-      <div class="inc-col">
-        <h4>Badrum</h4>
-        <ul class="inc-list">
-          <li>Toalett in- och utsida</li><li>Handfat och kranar</li><li>Dusch/badkar och kakel</li><li>Spegel och hyllor</li><li>Golv och golvbrunnar</li><li>Förvaringsskåp utsida</li>
-        </ul>
-      </div>
-      <div class="inc-col">
-        <h4>Sovrum &amp; vardagsrum</h4>
-        <ul class="inc-list">
-          <li>Dammsugning av mattor och golv</li><li>Moppning av hårda golv</li><li>Damning av ytor och hyllor</li><li>Fönsterbänkar och dörrar</li><li>Eluttag och strömbrytare</li><li>Dammsugning av möbler</li>
-        </ul>
-      </div>
+      <div class="inc-col"><h4>Kök</h4><ul class="inc-list"><li>Diskbänk och kranar</li><li>Spis, ugn och köksfläkt utsida</li><li>Kylskåp utsida</li><li>Skåp och lådor utsida</li><li>Bänkytor och kakel</li><li>Golv – sopas och moppas</li></ul></div>
+      <div class="inc-col"><h4>Badrum</h4><ul class="inc-list"><li>Toalett in- och utsida</li><li>Handfat och kranar</li><li>Dusch/badkar och kakel</li><li>Spegel och hyllor</li><li>Golv och golvbrunnar</li><li>Förvaringsskåp utsida</li></ul></div>
+      <div class="inc-col"><h4>Sovrum &amp; vardagsrum</h4><ul class="inc-list"><li>Dammsugning av mattor och golv</li><li>Moppning av hårda golv</li><li>Damning av ytor och hyllor</li><li>Fönsterbänkar och dörrar</li><li>Eluttag och strömbrytare</li><li>Dammsugning av möbler</li></ul></div>
     </div>
   </section>
-
-  <section class="rut-section">
+  <section class="rut-section" aria-labelledby="rut-heading">
     <div class="rut-inner">
       <div>
         <div class="sec-kicker" style="color:var(--honey)">RUT-avdrag</div>
-        <h2 class="sec-title" style="color:var(--white)">Du betalar <em style="color:var(--honey)">halva priset.</em></h2>
-        <p class="sec-body" style="color:rgba(255,255,255,.6);max-width:100%">RUT-avdraget innebär att du som betalar skatt i Sverige bara behöver stå för 50% av arbetskostnaden. Vi sköter allt pappersarbete – du gör ingenting extra.</p>
+        <h2 class="sec-title" id="rut-heading" style="color:var(--white)">Du betalar <em style="color:var(--honey)">halva priset.</em></h2>
+        <p class="sec-body" style="color:rgba(255,255,255,.6);max-width:100%">RUT-avdraget innebär att du som betalar skatt i Sverige bara behöver stå för 50% av arbetskostnaden. Vi sköter allt pappersarbete.</p>
         <div class="rut-pts">
-          <div class="rut-pt"><div class="rut-dot">✓</div>Vi fakturerar Skatteverket direkt</div>
-          <div class="rut-pt"><div class="rut-dot">✓</div>Gäller de flesta av våra tjänster</div>
-          <div class="rut-pt"><div class="rut-dot">✓</div>Max 75 000 kr avdrag per person och år</div>
-          <div class="rut-pt"><div class="rut-dot">✓</div>Du betalar bara till oss</div>
+          <div class="rut-pt"><div class="rut-dot" aria-hidden="true">✓</div>Vi fakturerar Skatteverket direkt</div>
+          <div class="rut-pt"><div class="rut-dot" aria-hidden="true">✓</div>Gäller de flesta av våra tjänster</div>
+          <div class="rut-pt"><div class="rut-dot" aria-hidden="true">✓</div>Max 75 000 kr avdrag per person och år</div>
+          <div class="rut-pt"><div class="rut-dot" aria-hidden="true">✓</div>Du betalar bara till oss</div>
         </div>
       </div>
       <div class="rut-box">
@@ -631,38 +592,30 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
       </div>
     </div>
   </section>
-
   <footer>
-    <div class="ft">
-      <div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig städtjänst i Malmö sedan 2010.</p></div>
-      <div class="ft-col"><h5>Sidor</h5><ul><li><a onclick="showPage('home')">Hem</a></li><li><a onclick="showPage('tjanster')">Tjänster</a></li><li><a onclick="showPage('priser')">Priser</a></li><li><a onclick="showPage('om')">Om oss</a></li><li><a onclick="showPage('kontakt')">Kontakt</a></li></ul></div>
-      <div class="ft-col"><h5>Tjänster</h5><ul><li><a onclick="showPage('tjanster')">Hemstädning</a></li><li><a onclick="showPage('tjanster')">Storstädning</a></li><li><a onclick="showPage('tjanster')">Flyttstädning</a></li><li><a onclick="showPage('tjanster')">Kontorsstädning</a></li></ul></div>
-      <div class="ft-col"><h5>Kontakt</h5><ul><li><a href="tel:040123456">040-123 45 67</a></li><li><a href="#">info@msservice.se</a></li><li><a onclick="showPage('kontakt')">Boka städning</a></li></ul></div>
-    </div>
-    <div class="ft-bottom"><span>© 2025 MS Service AB</span><span><a href="#">Integritetspolicy</a> · <a href="#">Villkor</a></span></div>
+    <div class="ft"><div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig städtjänst i Malmö sedan 2010.</p></div><div class="ft-col"><h5>Sidor</h5><ul><li><button onclick="showPage('home')">Hem</button></li><li><button onclick="showPage('tjanster')">Tjänster</button></li><li><button onclick="showPage('priser')">Priser</button></li><li><button onclick="showPage('om')">Om oss</button></li><li><button onclick="showPage('kontakt')">Kontakt</button></li></ul></div><div class="ft-col"><h5>Tjänster</h5><ul><li><button onclick="showPage('tjanster')">Hemstädning</button></li><li><button onclick="showPage('tjanster')">Storstädning</button></li><li><button onclick="showPage('tjanster')">Flyttstädning</button></li><li><button onclick="showPage('tjanster')">Kontorsstädning</button></li></ul></div><div class="ft-col"><h5>Kontakt</h5><ul><li><button onclick="window.location='tel:+46401234567'">040-123 45 67</button></li><li><button onclick="window.location='mailto:info@msservice.se'">info@msservice.se</button></li><li><button onclick="showPage('kontakt')">Boka städning</button></li></ul></div></div>
+    <div class="ft-bottom"><span>© 2025 MS Service AB</span></div>
   </footer>
-</div>
+</main>
 
-<!-- ═══════════════════════════════════════
+<!-- ═══════════════════════════════
      PAGE: PRISER
-═══════════════════════════════════════ -->
-<div id="page-priser" class="page">
+═══════════════════════════════ -->
+<main id="page-priser" class="page" role="main">
   <div class="page-hero">
-    <div class="breadcrumb"><a onclick="showPage('home')">Hem</a><span>/</span><span style="color:rgba(255,255,255,.7)">Priser</span></div>
+    <div class="breadcrumb"><button onclick="showPage('home')">Hem</button><span>/</span><span style="color:rgba(255,255,255,.7)">Priser</span></div>
     <div class="page-hero-kicker">Transparenta priser</div>
     <h1>Inga <em>dolda avgifter</em></h1>
     <p>Alla priser är inklusive moms och material. Privatpersoner betalar hälften tack vare RUT-avdrag.</p>
   </div>
-
   <section class="priser-page">
-    <div class="priser-tabs">
-      <button class="tab-btn active" onclick="switchTab('privat',this)">Privatperson</button>
-      <button class="tab-btn" onclick="switchTab('foretag',this)">Företag</button>
+    <div class="priser-tabs" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('privat',this)">Privatperson</button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('foretag',this)">Företag</button>
     </div>
-
-    <div id="tab-privat" class="tab-content active">
-      <table class="priser-table">
-        <thead><tr><th>Tjänst</th><th>Detaljer</th><th>Pris efter RUT</th><th>Originalpris</th></tr></thead>
+    <div id="tab-privat" class="tab-content active" role="tabpanel">
+      <table class="priser-table" aria-label="Priser för privatpersoner">
+        <thead><tr><th scope="col">Tjänst</th><th scope="col">Detaljer</th><th scope="col">Pris efter RUT</th><th scope="col">Originalpris</th></tr></thead>
         <tbody>
           <tr><td><div class="td-service">Hemstädning</div></td><td><div class="td-note">Per timme, min. 2h</div></td><td><div class="td-price-new">349 kr/tim</div></td><td><div class="td-price-old">698 kr/tim</div></td></tr>
           <tr><td><div class="td-service">Hemstädning 2h-paket</div></td><td><div class="td-note">Löpande varannan vecka</div></td><td><div class="td-price-new">698 kr</div></td><td><div class="td-price-old">1 396 kr</div></td></tr>
@@ -676,10 +629,9 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
       </table>
       <div class="priser-note"><strong>RUT-avdraget:</strong> Priserna ovan är redan halverade med 50% RUT-avdrag. Du betalar bara till oss – vi sköter resten med Skatteverket. Inga ansökningar, inga krångel.</div>
     </div>
-
-    <div id="tab-foretag" class="tab-content">
-      <table class="priser-table">
-        <thead><tr><th>Tjänst</th><th>Detaljer</th><th>Pris ex. moms</th></tr></thead>
+    <div id="tab-foretag" class="tab-content" role="tabpanel">
+      <table class="priser-table" aria-label="Priser för företag">
+        <thead><tr><th scope="col">Tjänst</th><th scope="col">Detaljer</th><th scope="col">Pris ex. moms</th></tr></thead>
         <tbody>
           <tr><td><div class="td-service">Kontorsstädning</div></td><td><div class="td-note">Dagligen / veckovis, offert baserat på yta</div></td><td><div class="td-price-new">Offert</div></td></tr>
           <tr><td><div class="td-service">Trappstädning</div></td><td><div class="td-note">BRF eller fastighetsägare</div></td><td><div class="td-price-new">fr. 640 kr/mån</div></td></tr>
@@ -690,60 +642,40 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
       <div class="priser-note"><strong>OBS:</strong> Företag och BRF-kunder kan ej nyttja RUT-avdrag. Priser ovan är exklusive moms (25%). Kontakta oss för en skräddarsydd offert.</div>
     </div>
   </section>
-
   <div style="background:var(--white);padding:5rem 5%">
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem">
-      <div style="background:var(--sand);border:1px solid var(--border);border-radius:18px;padding:2rem;text-align:center">
-        <div style="font-size:1.8rem;margin-bottom:.8rem">💳</div>
-        <h4 style="font-family:var(--serif);font-size:1.1rem;color:var(--brown);margin-bottom:.5rem;font-weight:400">Betalning</h4>
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.6">Vi fakturerar i efterhand. Betalningstid 30 dagar. Vi accepterar bankgiro och Swish.</p>
-      </div>
-      <div style="background:var(--sand);border:1px solid var(--border);border-radius:18px;padding:2rem;text-align:center">
-        <div style="font-size:1.8rem;margin-bottom:.8rem">📋</div>
-        <h4 style="font-family:var(--serif);font-size:1.1rem;color:var(--brown);margin-bottom:.5rem;font-weight:400">Ingen bindningstid</h4>
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.6">Du binder dig inte till något. Avbokning senast 48 timmar innan utan kostnad.</p>
-      </div>
-      <div style="background:var(--sand);border:1px solid var(--border);border-radius:18px;padding:2rem;text-align:center">
-        <div style="font-size:1.8rem;margin-bottom:.8rem">✨</div>
-        <h4 style="font-family:var(--serif);font-size:1.1rem;color:var(--brown);margin-bottom:.5rem;font-weight:400">Nöjdhetsgaranti</h4>
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.6">Inte nöjd? Vi återkommer gratis inom 24 timmar och åtgärdar det du pekar på.</p>
-      </div>
+      <div style="background:var(--sand);border:1px solid var(--border);border-radius:18px;padding:2rem;text-align:center"><div style="font-size:1.8rem;margin-bottom:.8rem" aria-hidden="true">💳</div><h4 style="font-family:var(--serif);font-size:1.1rem;color:var(--brown);margin-bottom:.5rem;font-weight:400">Betalning</h4><p style="font-size:.85rem;color:var(--muted);line-height:1.6">Vi fakturerar i efterhand. Betalningstid 30 dagar. Vi accepterar bankgiro och Swish.</p></div>
+      <div style="background:var(--sand);border:1px solid var(--border);border-radius:18px;padding:2rem;text-align:center"><div style="font-size:1.8rem;margin-bottom:.8rem" aria-hidden="true">📋</div><h4 style="font-family:var(--serif);font-size:1.1rem;color:var(--brown);margin-bottom:.5rem;font-weight:400">Ingen bindningstid</h4><p style="font-size:.85rem;color:var(--muted);line-height:1.6">Du binder dig inte till något. Avbokning senast 48 timmar innan utan kostnad.</p></div>
+      <div style="background:var(--sand);border:1px solid var(--border);border-radius:18px;padding:2rem;text-align:center"><div style="font-size:1.8rem;margin-bottom:.8rem" aria-hidden="true">✨</div><h4 style="font-family:var(--serif);font-size:1.1rem;color:var(--brown);margin-bottom:.5rem;font-weight:400">Nöjdhetsgaranti</h4><p style="font-size:.85rem;color:var(--muted);line-height:1.6">Inte nöjd? Vi återkommer gratis inom 24 timmar och åtgärdar det du pekar på.</p></div>
     </div>
   </div>
-
   <footer>
-    <div class="ft">
-      <div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig städtjänst i Malmö sedan 2010.</p></div>
-      <div class="ft-col"><h5>Sidor</h5><ul><li><a onclick="showPage('home')">Hem</a></li><li><a onclick="showPage('tjanster')">Tjänster</a></li><li><a onclick="showPage('priser')">Priser</a></li><li><a onclick="showPage('om')">Om oss</a></li><li><a onclick="showPage('kontakt')">Kontakt</a></li></ul></div>
-      <div class="ft-col"><h5>Tjänster</h5><ul><li><a onclick="showPage('tjanster')">Hemstädning</a></li><li><a onclick="showPage('tjanster')">Storstädning</a></li><li><a onclick="showPage('tjanster')">Flyttstädning</a></li><li><a onclick="showPage('tjanster')">Kontorsstädning</a></li></ul></div>
-      <div class="ft-col"><h5>Kontakt</h5><ul><li><a href="tel:040123456">040-123 45 67</a></li><li><a href="#">info@msservice.se</a></li><li><a onclick="showPage('kontakt')">Boka städning</a></li></ul></div>
-    </div>
-    <div class="ft-bottom"><span>© 2025 MS Service AB</span><span><a href="#">Integritetspolicy</a> · <a href="#">Villkor</a></span></div>
+    <div class="ft"><div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig städtjänst i Malmö sedan 2010.</p></div><div class="ft-col"><h5>Sidor</h5><ul><li><button onclick="showPage('home')">Hem</button></li><li><button onclick="showPage('tjanster')">Tjänster</button></li><li><button onclick="showPage('priser')">Priser</button></li><li><button onclick="showPage('om')">Om oss</button></li><li><button onclick="showPage('kontakt')">Kontakt</button></li></ul></div><div class="ft-col"><h5>Tjänster</h5><ul><li><button onclick="showPage('tjanster')">Hemstädning</button></li><li><button onclick="showPage('tjanster')">Storstädning</button></li><li><button onclick="showPage('tjanster')">Flyttstädning</button></li><li><button onclick="showPage('tjanster')">Kontorsstädning</button></li></ul></div><div class="ft-col"><h5>Kontakt</h5><ul><li><button onclick="window.location='tel:+46401234567'">040-123 45 67</button></li><li><button onclick="window.location='mailto:info@msservice.se'">info@msservice.se</button></li><li><button onclick="showPage('kontakt')">Boka städning</button></li></ul></div></div>
+    <div class="ft-bottom"><span>© 2025 MS Service AB</span></div>
   </footer>
-</div>
+</main>
 
-<!-- ═══════════════════════════════════════
+<!-- ═══════════════════════════════
      PAGE: OM OSS
-═══════════════════════════════════════ -->
-<div id="page-om" class="page">
+═══════════════════════════════ -->
+<main id="page-om" class="page" role="main">
   <div class="page-hero">
-    <div class="breadcrumb"><a onclick="showPage('home')">Hem</a><span>/</span><span style="color:rgba(255,255,255,.7)">Om oss</span></div>
+    <div class="breadcrumb"><button onclick="showPage('home')">Hem</button><span>/</span><span style="color:rgba(255,255,255,.7)">Om oss</span></div>
     <div class="page-hero-kicker">Vår historia</div>
     <h1>Städning med <em>hjärta</em></h1>
     <p>Vi är ett litet, familjärt städbolag. Inte ett anonymt storföretag – utan människor som bryr sig.</p>
   </div>
-
-  <section class="om-story">
+  <section class="om-story" aria-labelledby="story-heading">
     <div class="om-inner">
       <div style="position:relative">
-        <div class="om-photo"><div class="om-photo-inner">🧹</div></div>
+        <div class="om-photo"><div class="om-photo-inner" aria-hidden="true">🧹</div></div>
         <div class="om-sticker"><strong>2010</strong><span>Grundades i Malmö</span></div>
       </div>
       <div>
         <div class="sec-kicker">Vår berättelse</div>
-        <h2 class="sec-title">Från ett städbolag <em>med passion</em></h2>
+        <h2 class="sec-title" id="story-heading">Från ett städbolag <em>med passion</em></h2>
         <p class="sec-body" style="max-width:100%">MS Service grundades 2010 av Maria Svensson med en enkel övertygelse – att städning handlar om omsorg om hemmet och om människorna i det. Maria började med att städa hus och lägenheter i Malmö på deltid, och fick snabbt ett rykte om sig att vara noggrann, pålitlig och varm.</p>
-        <p style="margin-top:1rem;font-size:1rem;color:var(--muted);line-height:1.72;font-weight:300">Idag är vi 18 medarbetare som servar över 1 400 hushåll och företag i Malmö med omnejd. Vi har vuxit, men den personliga känslan är kvar. Varje ny kund möts av engagemang och omtanke.</p>
+        <p style="margin-top:1rem;font-size:1rem;color:var(--muted);line-height:1.72;font-weight:300">Idag är vi 18 medarbetare som servar över 1 400 hushåll och företag i Malmö med omnejd. Vi har vuxit, men den personliga känslan är kvar.</p>
         <div class="om-timeline">
           <div class="tl-item"><div class="tl-year">2010</div><div class="tl-content"><h5>MS Service grundas</h5><p>Maria Svensson startar företaget med tre städare och stort hjärta.</p></div></div>
           <div class="tl-item"><div class="tl-year">2014</div><div class="tl-content"><h5>Utökar till kontor</h5><p>Vi börjar erbjuda kontorsstädning och tar in fler städare.</p></div></div>
@@ -753,254 +685,275 @@ footer{background:var(--brown);padding:5rem 5% 2.5rem}
       </div>
     </div>
   </section>
-
-  <section class="om-team">
-    <div style="text-align:center;max-width:600px;margin:0 auto 0">
-      <div class="sec-kicker">Teamet</div>
-      <h2 class="sec-title">Möt <em>oss</em></h2>
-    </div>
+  <section class="om-team" aria-labelledby="team-heading">
+    <div style="text-align:center;max-width:600px;margin:0 auto"><div class="sec-kicker">Teamet</div><h2 class="sec-title" id="team-heading">Möt <em>oss</em></h2></div>
     <div class="team-grid">
-      <div class="team-card"><div class="team-av">M</div><div class="team-name">Maria Svensson</div><div class="team-role">Grundare &amp; VD</div></div>
-      <div class="team-card"><div class="team-av">P</div><div class="team-name">Petra Nilsson</div><div class="team-role">Driftchef</div></div>
-      <div class="team-card"><div class="team-av">J</div><div class="team-name">Johan Ek</div><div class="team-role">Teamledare Malmö</div></div>
-      <div class="team-card"><div class="team-av">S</div><div class="team-name">Sara Lindqvist</div><div class="team-role">Kundansvarig</div></div>
+      <div class="team-card"><div class="team-av" aria-label="Maria Svensson">M</div><div class="team-name">Maria Svensson</div><div class="team-role">Grundare &amp; VD</div></div>
+      <div class="team-card"><div class="team-av" aria-label="Petra Nilsson">P</div><div class="team-name">Petra Nilsson</div><div class="team-role">Driftchef</div></div>
+      <div class="team-card"><div class="team-av" aria-label="Johan Ek">J</div><div class="team-name">Johan Ek</div><div class="team-role">Teamledare Malmö</div></div>
+      <div class="team-card"><div class="team-av" aria-label="Sara Lindqvist">S</div><div class="team-name">Sara Lindqvist</div><div class="team-role">Kundansvarig</div></div>
     </div>
   </section>
-
-  <section class="om-values">
-    <div style="text-align:center;max-width:600px;margin:0 auto 0">
-      <div class="sec-kicker">Vad vi tror på</div>
-      <h2 class="sec-title">Våra <em>värderingar</em></h2>
-    </div>
+  <section class="om-values" aria-labelledby="values-heading">
+    <div style="text-align:center;max-width:600px;margin:0 auto"><div class="sec-kicker">Vad vi tror på</div><h2 class="sec-title" id="values-heading">Våra <em>värderingar</em></h2></div>
     <div class="values-grid">
-      <div class="val-card"><div class="val-icon">🤝</div><h4>Pålitlighet</h4><p>Vi håller alltid vad vi lovar. Kommer i tid, utför jobbet ordentligt och kommunicerar om något uppstår.</p></div>
-      <div class="val-card"><div class="val-icon">🌿</div><h4>Miljöansvar</h4><p>Enbart miljömärkta och allergitest rengöringsmedel. Vi värnar om din hälsa och miljön.</p></div>
-      <div class="val-card"><div class="val-icon">💛</div><h4>Omtanke</h4><p>Vi behandlar ditt hem som vårt eget. Med respekt, försiktighet och äkta omsorg.</p></div>
-      <div class="val-card"><div class="val-icon">🏅</div><h4>Kvalitet</h4><p>Nöjdhetsgaranti på alla uppdrag. Inte nöjd? Vi återkommer gratis och åtgärdar.</p></div>
-      <div class="val-card"><div class="val-icon">🔒</div><h4>Trygghet</h4><p>Fullt ansvarsförsäkrade städare med bakgrundskontroll. Du är alltid skyddad.</p></div>
-      <div class="val-card"><div class="val-icon">📖</div><h4>Ärlighet</h4><p>Inga dolda avgifter, inga otydliga villkor. Det pris du ser är det pris du betalar.</p></div>
+      <div class="val-card"><div class="val-icon" aria-hidden="true">🤝</div><h4>Pålitlighet</h4><p>Vi håller alltid vad vi lovar. Kommer i tid, utför jobbet ordentligt och kommunicerar om något uppstår.</p></div>
+      <div class="val-card"><div class="val-icon" aria-hidden="true">🌿</div><h4>Miljöansvar</h4><p>Enbart miljömärkta och allergitest rengöringsmedel. Vi värnar om din hälsa och miljön.</p></div>
+      <div class="val-card"><div class="val-icon" aria-hidden="true">💛</div><h4>Omtanke</h4><p>Vi behandlar ditt hem som vårt eget. Med respekt, försiktighet och äkta omsorg.</p></div>
+      <div class="val-card"><div class="val-icon" aria-hidden="true">🏅</div><h4>Kvalitet</h4><p>Nöjdhetsgaranti på alla uppdrag. Inte nöjd? Vi återkommer gratis och åtgärdar.</p></div>
+      <div class="val-card"><div class="val-icon" aria-hidden="true">🔒</div><h4>Trygghet</h4><p>Fullt ansvarsförsäkrade städare med bakgrundskontroll. Du är alltid skyddad.</p></div>
+      <div class="val-card"><div class="val-icon" aria-hidden="true">📖</div><h4>Ärlighet</h4><p>Inga dolda avgifter, inga otydliga villkor. Det pris du ser är det pris du betalar.</p></div>
     </div>
   </section>
-
   <footer>
-    <div class="ft">
-      <div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig städtjänst i Malmö sedan 2010.</p></div>
-      <div class="ft-col"><h5>Sidor</h5><ul><li><a onclick="showPage('home')">Hem</a></li><li><a onclick="showPage('tjanster')">Tjänster</a></li><li><a onclick="showPage('priser')">Priser</a></li><li><a onclick="showPage('om')">Om oss</a></li><li><a onclick="showPage('kontakt')">Kontakt</a></li></ul></div>
-      <div class="ft-col"><h5>Tjänster</h5><ul><li><a onclick="showPage('tjanster')">Hemstädning</a></li><li><a onclick="showPage('tjanster')">Storstädning</a></li><li><a onclick="showPage('tjanster')">Flyttstädning</a></li><li><a onclick="showPage('tjanster')">Kontorsstädning</a></li></ul></div>
-      <div class="ft-col"><h5>Kontakt</h5><ul><li><a href="tel:040123456">040-123 45 67</a></li><li><a href="#">info@msservice.se</a></li><li><a onclick="showPage('kontakt')">Boka städning</a></li></ul></div>
-    </div>
-    <div class="ft-bottom"><span>© 2025 MS Service AB</span><span><a href="#">Integritetspolicy</a> · <a href="#">Villkor</a></span></div>
+    <div class="ft"><div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig städtjänst i Malmö sedan 2010.</p></div><div class="ft-col"><h5>Sidor</h5><ul><li><button onclick="showPage('home')">Hem</button></li><li><button onclick="showPage('tjanster')">Tjänster</button></li><li><button onclick="showPage('priser')">Priser</button></li><li><button onclick="showPage('om')">Om oss</button></li><li><button onclick="showPage('kontakt')">Kontakt</button></li></ul></div><div class="ft-col"><h5>Tjänster</h5><ul><li><button onclick="showPage('tjanster')">Hemstädning</button></li><li><button onclick="showPage('tjanster')">Storstädning</button></li><li><button onclick="showPage('tjanster')">Flyttstädning</button></li><li><button onclick="showPage('tjanster')">Kontorsstädning</button></li></ul></div><div class="ft-col"><h5>Kontakt</h5><ul><li><button onclick="window.location='tel:+46401234567'">040-123 45 67</button></li><li><button onclick="window.location='mailto:info@msservice.se'">info@msservice.se</button></li><li><button onclick="showPage('kontakt')">Boka städning</button></li></ul></div></div>
+    <div class="ft-bottom"><span>© 2025 MS Service AB</span></div>
   </footer>
-</div>
+</main>
 
-<!-- ═══════════════════════════════════════
+<!-- ═══════════════════════════════
      PAGE: KONTAKT
-═══════════════════════════════════════ -->
-<div id="page-kontakt" class="page">
+═══════════════════════════════ -->
+<main id="page-kontakt" class="page" role="main">
   <div class="page-hero">
-    <div class="breadcrumb"><a onclick="showPage('home')">Hem</a><span>/</span><span style="color:rgba(255,255,255,.7)">Kontakt</span></div>
+    <div class="breadcrumb"><button onclick="showPage('home')">Hem</button><span>/</span><span style="color:rgba(255,255,255,.7)">Kontakt</span></div>
     <div class="page-hero-kicker">Vi hör av oss snabbt</div>
     <h1>Kontakta <em>oss</em></h1>
     <p>Fyll i formuläret eller ring oss direkt. Vi svarar samma dag på vardagar.</p>
   </div>
-
-  <section class="kontakt-page">
+  <section class="kontakt-page" aria-labelledby="kontakt-heading">
     <div class="kontakt-grid">
-
-      <!-- LEFT: info + map -->
       <div>
         <div class="sec-kicker">Hitta oss</div>
-        <h2 class="sec-title">Vi finns <em>här</em></h2>
-
+        <h2 class="sec-title" id="kontakt-heading">Vi finns <em>här</em></h2>
         <div class="k-info-cards">
-          <div class="k-info-card">
-            <div class="k-icon">📞</div>
-            <div>
-              <h5>Telefon</h5>
-              <p>040-123 45 67</p>
-              <span>Mån–Fre 07–18 · Lör 08–14</span>
-            </div>
-          </div>
-          <div class="k-info-card">
-            <div class="k-icon">📧</div>
-            <div>
-              <h5>E-post</h5>
-              <p>info@msservice.se</p>
-              <span>Svar inom 2 timmar på vardagar</span>
-            </div>
-          </div>
-          <div class="k-info-card">
-            <div class="k-icon">📍</div>
-            <div>
-              <h5>Adress</h5>
-              <p>Storgatan 14, 211 22 Malmö</p>
-              <span>Besök gärna efter överenskommelse</span>
-            </div>
-          </div>
-          <div class="k-info-card">
-            <div class="k-icon">🕐</div>
-            <div>
-              <h5>Öppettider kontor</h5>
-              <p>Måndag–Fredag 07:00–18:00</p>
-              <span>Lördag 08:00–14:00 · Söndag stängt</span>
-            </div>
-          </div>
+          <div class="k-info-card"><div class="k-icon" aria-hidden="true">📞</div><div><h5>Telefon</h5><p>040-123 45 67</p><span>Mån–Fre 07–18 · Lör 08–14</span></div></div>
+          <div class="k-info-card"><div class="k-icon" aria-hidden="true">📧</div><div><h5>E-post</h5><p>info@msservice.se</p><span>Svar inom 2 timmar på vardagar</span></div></div>
+          <div class="k-info-card"><div class="k-icon" aria-hidden="true">📍</div><div><h5>Adress</h5><p>Storgatan 14, 211 22 Malmö</p><span>Besök gärna efter överenskommelse</span></div></div>
+          <div class="k-info-card"><div class="k-icon" aria-hidden="true">🕐</div><div><h5>Öppettider</h5><p>Måndag–Fredag 07:00–18:00</p><span>Lördag 08:00–14:00 · Söndag stängt</span></div></div>
         </div>
-
-        <!-- Google Maps embed of Malmö/Storgatan area -->
         <div class="map-wrap">
           <iframe
+            title="MS Service kontor på Storgatan 14, Malmö"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2253.4638261614375!2d13.00053371582!3d55.60498998055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a0322a8db735%3A0xa58e71a285073a13!2sStorgatan%2014%2C%20211%2022%20Malm%C3%B6!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="MS Service kontor Malmö">
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
       </div>
-
-      <!-- RIGHT: contact form -->
-      <div class="k-form" id="contact-form-wrap">
+      <div class="k-form" id="contact-form-wrap" aria-label="Kontaktformulär">
         <div class="k-form-head">
           <h3>Skicka en förfrågan</h3>
           <p>Gratis offert · Ingen bindningstid · RUT-avdrag inkluderat</p>
         </div>
         <div class="k-form-body" id="form-fields">
           <div class="fr2">
-            <div class="fg"><label>Förnamn *</label><input type="text" id="f-fornamn" placeholder="Anna"/></div>
-            <div class="fg"><label>Efternamn *</label><input type="text" id="f-efternamn" placeholder="Svensson"/></div>
+            <div class="fg"><label for="f-fornamn">Förnamn *</label><input type="text" id="f-fornamn" name="fornamn" autocomplete="given-name" placeholder="Anna"/></div>
+            <div class="fg"><label for="f-efternamn">Efternamn</label><input type="text" id="f-efternamn" name="efternamn" autocomplete="family-name" placeholder="Svensson"/></div>
           </div>
           <div class="fr2">
-            <div class="fg"><label>Telefon *</label><input type="tel" id="f-tel" placeholder="070-000 00 00"/></div>
-            <div class="fg"><label>E-post *</label><input type="email" id="f-email" placeholder="anna@mail.se"/></div>
+            <div class="fg"><label for="f-tel">Telefon *</label><input type="tel" id="f-tel" name="telefon" autocomplete="tel" placeholder="070-000 00 00"/></div>
+            <div class="fg"><label for="f-email">E-post *</label><input type="email" id="f-email" name="email" autocomplete="email" placeholder="anna@mail.se"/></div>
           </div>
-          <div class="fg"><label>Tjänst</label>
-            <select id="f-tjanst">
+          <div class="fg"><label for="f-tjanst">Tjänst</label>
+            <select id="f-tjanst" name="tjanst">
               <option value="">Välj tjänst…</option>
-              <option>Hemstädning – löpande</option>
-              <option>Storstädning</option>
-              <option>Flyttstädning</option>
-              <option>Kontorsstädning</option>
-              <option>Fönsterputsning</option>
-              <option>Trappstädning</option>
+              <option value="hemstadning">Hemstädning – löpande</option>
+              <option value="storstadning">Storstädning</option>
+              <option value="flyttstadning">Flyttstädning</option>
+              <option value="kontor">Kontorsstädning</option>
+              <option value="fonster">Fönsterputsning</option>
+              <option value="trappa">Trappstädning</option>
             </select>
           </div>
           <div class="fr2">
-            <div class="fg"><label>Bostadsyta (kvm)</label><input type="text" id="f-yta" placeholder="t.ex. 75"/></div>
-            <div class="fg"><label>Önskat datum</label><input type="date" id="f-datum"/></div>
+            <div class="fg"><label for="f-yta">Bostadsyta (kvm)</label><input type="text" id="f-yta" name="yta" placeholder="t.ex. 75" inputmode="numeric"/></div>
+            <div class="fg"><label for="f-datum">Önskat datum</label><input type="date" id="f-datum" name="datum"/></div>
           </div>
-          <div class="fg"><label>Adress</label><input type="text" id="f-adress" placeholder="Gatan 1, Malmö"/></div>
-          <div class="fg"><label>Meddelande</label><textarea id="f-msg" placeholder="Eventuella önskemål, frågor eller annat vi bör veta…"></textarea></div>
+          <div class="fg"><label for="f-adress">Adress</label><input type="text" id="f-adress" name="adress" autocomplete="street-address" placeholder="Gatan 1, Malmö"/></div>
+          <div class="fg"><label for="f-msg">Meddelande</label><textarea id="f-msg" name="meddelande" placeholder="Eventuella önskemål, frågor eller annat vi bör veta…"></textarea></div>
           <div class="fg" style="flex-direction:row;align-items:center;gap:.7rem;margin-bottom:.5rem">
-            <input type="checkbox" id="f-rut" style="width:18px;height:18px;accent-color:var(--honey);flex-shrink:0"/>
-            <label for="f-rut" style="text-transform:none;letter-spacing:0;font-size:.85rem;color:var(--muted);cursor:pointer">Jag vill nyttja RUT-avdraget (privatperson, betalar skatt i Sverige)</label>
+            <input type="checkbox" id="f-rut" name="rut" style="width:18px;height:18px;accent-color:var(--honey);flex-shrink:0"/>
+            <label for="f-rut" style="text-transform:none;letter-spacing:0;font-size:.85rem;color:var(--muted);cursor:pointer;font-weight:400">Jag vill nyttja RUT-avdraget (privatperson, betalar skatt i Sverige)</label>
           </div>
-          <button class="form-submit" onclick="submitForm()">Skicka förfrågan →</button>
+          <div id="form-error-msg" style="display:none;background:#fef2ef;border:1px solid #e85a3a;border-radius:8px;padding:.8rem 1rem;font-size:.85rem;color:#c0392b;margin-bottom:.8rem"></div>
+          <button class="form-submit" onclick="submitForm()" type="button">Skicka förfrågan →</button>
           <p class="form-note">Vi kontaktar dig inom 2 timmar på vardagar · Gratis &amp; utan förpliktelse</p>
         </div>
-        <div class="form-success" id="form-success">
-          <div class="success-ico">🌟</div>
-          <h4>Tack, vi har mottagit din förfrågan!</h4>
+        <div class="form-success" id="form-success" role="alert">
+          <div class="success-ico" aria-hidden="true">🌟</div>
+          <h4>Tack! Vi har fått din förfrågan.</h4>
           <p>Vi återkommer till dig inom 2 timmar på vardagar.<br/>Kolla gärna din e-post och ditt SMS.</p>
           <button class="btn-primary" style="margin-top:1.5rem" onclick="resetForm()">Skicka en ny förfrågan</button>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- FAQ strip -->
-  <section style="padding:5rem 5%;background:var(--white)">
+  <section style="padding:5rem 5%;background:var(--white)" aria-labelledby="faq-heading">
     <div style="max-width:700px;margin:0 auto">
-      <div style="text-align:center;margin-bottom:3rem">
-        <div class="sec-kicker">FAQ</div>
-        <h2 class="sec-title">Vanliga <em>frågor</em></h2>
-      </div>
+      <div style="text-align:center;margin-bottom:3rem"><div class="sec-kicker">FAQ</div><h2 class="sec-title" id="faq-heading">Vanliga <em>frågor</em></h2></div>
       <div id="faq-wrap"></div>
     </div>
   </section>
 
   <footer>
-    <div class="ft">
-      <div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig städtjänst i Malmö sedan 2010.</p></div>
-      <div class="ft-col"><h5>Sidor</h5><ul><li><a onclick="showPage('home')">Hem</a></li><li><a onclick="showPage('tjanster')">Tjänster</a></li><li><a onclick="showPage('priser')">Priser</a></li><li><a onclick="showPage('om')">Om oss</a></li><li><a onclick="showPage('kontakt')">Kontakt</a></li></ul></div>
-      <div class="ft-col"><h5>Tjänster</h5><ul><li><a onclick="showPage('tjanster')">Hemstädning</a></li><li><a onclick="showPage('tjanster')">Storstädning</a></li><li><a onclick="showPage('tjanster')">Flyttstädning</a></li><li><a onclick="showPage('tjanster')">Kontorsstädning</a></li></ul></div>
-      <div class="ft-col"><h5>Kontakt</h5><ul><li><a href="tel:040123456">040-123 45 67</a></li><li><a href="#">info@msservice.se</a></li><li><a onclick="showPage('kontakt')">Boka städning</a></li></ul></div>
-    </div>
-    <div class="ft-bottom"><span>© 2025 MS Service AB</span><span><a href="#">Integritetspolicy</a> · <a href="#">Villkor</a></span></div>
+    <div class="ft"><div><div class="ft-logo"><span class="ft-dot"></span>MS Service</div><p class="ft-desc">Personlig städtjänst i Malmö sedan 2010.</p></div><div class="ft-col"><h5>Sidor</h5><ul><li><button onclick="showPage('home')">Hem</button></li><li><button onclick="showPage('tjanster')">Tjänster</button></li><li><button onclick="showPage('priser')">Priser</button></li><li><button onclick="showPage('om')">Om oss</button></li><li><button onclick="showPage('kontakt')">Kontakt</button></li></ul></div><div class="ft-col"><h5>Tjänster</h5><ul><li><button onclick="showPage('tjanster')">Hemstädning</button></li><li><button onclick="showPage('tjanster')">Storstädning</button></li><li><button onclick="showPage('tjanster')">Flyttstädning</button></li><li><button onclick="showPage('tjanster')">Kontorsstädning</button></li></ul></div><div class="ft-col"><h5>Kontakt</h5><ul><li><button onclick="window.location='tel:+46401234567'">040-123 45 67</button></li><li><button onclick="window.location='mailto:info@msservice.se'">info@msservice.se</button></li><li><button onclick="showPage('kontakt')">Boka städning</button></li></ul></div></div>
+    <div class="ft-bottom"><span>© 2025 MS Service AB · Org.nr 556xxx-xxxx</span></div>
   </footer>
-</div>
+</main>
 
 <script>
-// ─── PAGE ROUTER ───────────────────────────────
+/* ═══════════════════════════════
+   PAGE ROUTER
+═══════════════════════════════ */
 function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  const navEl = document.getElementById('nav-' + id);
-  if (navEl) navEl.classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  // Hide all pages
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) {
+    pages[i].classList.remove('active');
+  }
+
+  // Show target page
+  var target = document.getElementById('page-' + id);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update nav active state
+  var navBtns = document.querySelectorAll('.nav-links button');
+  for (var j = 0; j < navBtns.length; j++) {
+    navBtns[j].classList.remove('active');
+  }
+  var activeNav = document.getElementById('nav-' + id);
+  if (activeNav) {
+    activeNav.classList.add('active');
+  }
+
+  // Scroll to top
+  window.scrollTo(0, 0);
 }
 
-// ─── PRICE TABS ───────────────────────────────
+/* ═══════════════════════════════
+   PRICE TABS
+═══════════════════════════════ */
 function switchTab(id, btn) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
+  var contents = document.querySelectorAll('.tab-content');
+  for (var i = 0; i < contents.length; i++) {
+    contents[i].classList.remove('active');
+  }
+  var btns = document.querySelectorAll('.tab-btn');
+  for (var j = 0; j < btns.length; j++) {
+    btns[j].classList.remove('active');
+    btns[j].setAttribute('aria-selected', 'false');
+  }
+  var target = document.getElementById('tab-' + id);
+  if (target) target.classList.add('active');
   btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
 }
 
-// ─── CONTACT FORM ─────────────────────────────
+/* ═══════════════════════════════
+   CONTACT FORM
+═══════════════════════════════ */
 function submitForm() {
-  const fornamn = document.getElementById('f-fornamn').value.trim();
-  const tel = document.getElementById('f-tel').value.trim();
-  const email = document.getElementById('f-email').value.trim();
-  if (!fornamn || !tel || !email) {
-    alert('Fyll i förnamn, telefon och e-post för att skicka.');
+  var fornamn = document.getElementById('f-fornamn').value.trim();
+  var tel = document.getElementById('f-tel').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var errEl = document.getElementById('form-error-msg');
+
+  // Clear previous errors
+  errEl.style.display = 'none';
+  errEl.textContent = '';
+  document.getElementById('f-fornamn').classList.remove('field-error');
+  document.getElementById('f-tel').classList.remove('field-error');
+  document.getElementById('f-email').classList.remove('field-error');
+
+  var errors = [];
+  if (!fornamn) { errors.push('Förnamn saknas.'); document.getElementById('f-fornamn').classList.add('field-error'); }
+  if (!tel) { errors.push('Telefonnummer saknas.'); document.getElementById('f-tel').classList.add('field-error'); }
+  if (!email || email.indexOf('@') === -1) { errors.push('Ange en giltig e-postadress.'); document.getElementById('f-email').classList.add('field-error'); }
+
+  if (errors.length > 0) {
+    errEl.textContent = errors.join(' ');
+    errEl.style.display = 'block';
+    errEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     return;
   }
+
   document.getElementById('form-fields').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
+  document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
 function resetForm() {
+  var fields = ['f-fornamn','f-efternamn','f-tel','f-email','f-yta','f-adress','f-msg'];
+  for (var i = 0; i < fields.length; i++) {
+    document.getElementById(fields[i]).value = '';
+    document.getElementById(fields[i]).classList.remove('field-error');
+  }
+  document.getElementById('f-tjanst').value = '';
+  document.getElementById('f-datum').value = '';
+  document.getElementById('f-rut').checked = false;
+  document.getElementById('form-error-msg').style.display = 'none';
   document.getElementById('form-fields').style.display = 'block';
   document.getElementById('form-success').style.display = 'none';
-  ['f-fornamn','f-efternamn','f-tel','f-email','f-yta','f-adress','f-msg'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
-  document.getElementById('f-tjanst').value = '';
-  document.getElementById('f-rut').checked = false;
 }
 
-// ─── FAQ ──────────────────────────────────────
-const faqs = [
-  {q:'Hur lång tid tar en hemstädning?', a:'Det beror på bostadens storlek och skick. En 2-rummare tar vanligtvis 2–2,5 timmar, en 3-4 rummare 3–4 timmar. Vi ger dig ett mer exakt estimat i offerten.'},
-  {q:'Vad ingår i RUT-avdraget?', a:'RUT gäller de flesta hushållsnära tjänster – hemstädning, storstädning, flyttstädning och fönsterputsning. Det gäller för privatpersoner som betalar skatt i Sverige, upp till 75 000 kr per år.'},
-  {q:'Behöver jag vara hemma under städningen?', a:'Nej, det behöver du inte. Många av våra kunder ger oss en nyckel eller kod. Självklart är du välkommen att vara hemma om du föredrar det.'},
-  {q:'Tar ni med egna städprodukter?', a:'Ja, vi tar med allt material och alla rengöringsmedel. Enbart miljömärkta produkter. Du behöver inte ha något hemma.'},
-  {q:'Vad händer om jag inte är nöjd?', a:'Vi har full nöjdhetsgaranti. Kontakta oss inom 24 timmar och vi återkommer utan extra kostnad och åtgärdar det du pekar på.'},
+/* ═══════════════════════════════
+   FAQ ACCORDION
+═══════════════════════════════ */
+var faqs = [
+  { q: 'Hur lång tid tar en hemstädning?', a: 'Det beror på bostadens storlek och skick. En 2-rummare tar vanligtvis 2–2,5 timmar, en 3–4 rummare 3–4 timmar. Vi ger dig ett mer exakt estimat i offerten.' },
+  { q: 'Vad ingår i RUT-avdraget?', a: 'RUT gäller de flesta hushållsnära tjänster – hemstädning, storstädning, flyttstädning och fönsterputsning. Det gäller för privatpersoner som betalar skatt i Sverige, upp till 75 000 kr per år.' },
+  { q: 'Behöver jag vara hemma under städningen?', a: 'Nej, det behöver du inte. Många av våra kunder ger oss en nyckel eller kod. Självklart är du välkommen att vara hemma om du föredrar det.' },
+  { q: 'Tar ni med egna städprodukter?', a: 'Ja, vi tar med allt material och alla rengöringsmedel. Enbart miljömärkta produkter. Du behöver inte ha något hemma.' },
+  { q: 'Vad händer om jag inte är nöjd?', a: 'Vi har full nöjdhetsgaranti. Kontakta oss inom 24 timmar och vi återkommer utan extra kostnad och åtgärdar det du pekar på.' },
+  { q: 'Hur bokar jag?', a: 'Enklast fyller du i formuläret på denna sida eller ringer oss på 040-123 45 67. Vi återkommer samma dag med en bekräftelse och ett fast pris.' }
 ];
-const faqWrap = document.getElementById('faq-wrap');
-faqs.forEach((f, i) => {
-  faqWrap.innerHTML += `
-    <div style="border:1px solid var(--border);border-radius:12px;margin-bottom:.8rem;overflow:hidden">
-      <button onclick="toggleFaq(${i})" style="width:100%;text-align:left;padding:1.1rem 1.4rem;background:var(--sand);border:none;cursor:pointer;font-family:var(--sans);font-size:.9rem;font-weight:500;color:var(--brown);display:flex;justify-content:space-between;align-items:center">
-        ${f.q}
-        <span id="faq-icon-${i}" style="color:var(--honey);font-size:1.2rem;transition:transform .2s;flex-shrink:0;margin-left:1rem">+</span>
-      </button>
-      <div id="faq-ans-${i}" style="display:none;padding:1rem 1.4rem;background:var(--white);font-size:.875rem;color:var(--muted);line-height:1.7">${f.a}</div>
-    </div>`;
-});
-function toggleFaq(i) {
-  const ans = document.getElementById('faq-ans-'+i);
-  const ico = document.getElementById('faq-icon-'+i);
-  const open = ans.style.display === 'block';
-  ans.style.display = open ? 'none' : 'block';
-  ico.textContent = open ? '+' : '−';
+
+var faqWrap = document.getElementById('faq-wrap');
+if (faqWrap) {
+  for (var fi = 0; fi < faqs.length; fi++) {
+    (function(index, faq) {
+      var wrap = document.createElement('div');
+      wrap.style.cssText = 'border:1px solid var(--border);border-radius:12px;margin-bottom:.8rem;overflow:hidden';
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', 'faq-ans-' + index);
+      btn.style.cssText = 'width:100%;text-align:left;padding:1.1rem 1.4rem;background:var(--sand);border:none;cursor:pointer;font-family:var(--sans);font-size:.9rem;font-weight:500;color:var(--brown);display:flex;justify-content:space-between;align-items:center;gap:1rem';
+      btn.innerHTML = faq.q + '<span style="color:var(--honey);font-size:1.3rem;flex-shrink:0;transition:transform .25s;line-height:1">+</span>';
+
+      var ans = document.createElement('div');
+      ans.id = 'faq-ans-' + index;
+      ans.style.cssText = 'display:none;padding:1rem 1.4rem;background:var(--white);font-size:.875rem;color:var(--muted);line-height:1.7';
+      ans.textContent = faq.a;
+
+      btn.addEventListener('click', function() {
+        var isOpen = ans.style.display === 'block';
+        ans.style.display = isOpen ? 'none' : 'block';
+        btn.querySelector('span').style.transform = isOpen ? 'rotate(0deg)' : 'rotate(45deg)';
+        btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        btn.style.background = isOpen ? 'var(--sand)' : 'var(--honey-l)';
+      });
+
+      wrap.appendChild(btn);
+      wrap.appendChild(ans);
+      faqWrap.appendChild(wrap);
+    })(fi, faqs[fi]);
+  }
 }
 
-// ─── SET INITIAL NAV ─────────────────────────
-document.getElementById('nav-home').classList.add('active');
+/* ═══════════════════════════════
+   INIT
+═══════════════════════════════ */
+(function() {
+  var homeNav = document.getElementById('nav-home');
+  if (homeNav) homeNav.classList.add('active');
+})();
 </script>
 </body>
 </html>
